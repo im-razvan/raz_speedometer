@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOutDown {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(30px); }
+}
+
+body {
+  margin: 0; padding: 0; overflow: hidden; font-family: 'Roboto', sans-serif;
+}
+
+.dashboard {
+  display: flex; align-items: flex-end; justify-content: center; 
+  position: fixed; bottom: 25px; left: 0; right: 0; 
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.speed-display {
+  position: relative; width: 260px; height: 120px; 
+  background: linear-gradient(to bottom, #1a1a1a, #2a2a2a); 
+  border-radius: 15px; overflow: hidden; margin-right: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.speed-arc {
+  position: absolute; top: -70px; left: -70px; 
+  width: 400px; height: 400px; border-radius: 50%; 
+  border: 3px solid #333; border-top: 3px solid #4CAF50; 
+  transform: rotate(-45deg);
+}
+
+.speed-info {
+  position: relative; display: flex; align-items: baseline; 
+  justify-content: center; height: 85px; padding-top: 15px;
+}
+
+.speed-value {
+  font-size: 60px; font-weight: 700; color: #ffffff; 
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); 
+  transition: color 0.3s ease;
+}
+
+.speed-unit {
+  font-size: 14px; font-weight: 400; color: #bdbdbd; 
+  text-transform: uppercase; margin-left: 5px; margin-bottom: 10px;
+}
+
+.rpm-bar {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 20px; 
+  background: #333; display: flex; align-items: center; 
+  padding: 0 10px; box-sizing: border-box;
+}
+
+.rpm-fill {
+  height: 4px; background: #4CAF50; border-radius: 2px; 
+  transition: width 0.4s ease, background-color 0.3s ease;
+}
+
+.gasoline {
+  width: 18px; height: 120px; 
+  background: linear-gradient(to bottom, #1a1a1a, #2a2a2a); 
+  border-radius: 9px; overflow: hidden; position: relative; 
+  display: flex; flex-direction: column; align-items: center; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fuel-icon {
+  color: #bdbdbd; margin-top: 8px; z-index: 1; font-size: 12px;
+}
+
+.fuel-level {
+  position: absolute; bottom: 0; width: 100%; background: #4CAF50; 
+  transition: height 0.4s ease, background-color 0.3s ease;
+}
+
+.hidden {
+  animation: fadeOutDown 0.5s ease-out forwards;
+}
